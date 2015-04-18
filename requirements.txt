@@ -1,0 +1,6 @@
+pip
+git+https://github.com/fuzeman/PyEmitter.git
+git+https://github.com/fuzeman/PyEngineIO-Parser.git
+git+https://github.com/fuzeman/PyEngineIO-Client.git
+git+https://github.com/fuzeman/PySocketIO-Parser.git
+git+https://github.com/fuzeman/PySocketIO-Client.git
