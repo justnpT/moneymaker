@@ -5,7 +5,7 @@ Python 3.4
 
 ### Installing dependencies
 
-1. Make sure you have Python 3.4 and pip installed
+1. Make sure you have Python 2.7xy and pip installed
 2. Clone strategos repo
 Windows:
 3. Open the repo main folder
