@@ -1,7 +1,7 @@
 strategos
 =========
 
-Python 3.4
+Python 2.7xy
 
 ### Installing dependencies
 
