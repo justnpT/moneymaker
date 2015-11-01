@@ -2,6 +2,7 @@ _trial_temp
 nosetests.xml
 results.xml
 test.py
+credentials.py
 ve
 
 # Standard Python stuff
