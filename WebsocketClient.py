@@ -8,7 +8,8 @@ import re
 import hmac
 import hashlib
 import base64
-
+import processor
+from prices import Prices
 try:
     from pip.util import get_installed_distributions
 except:
@@ -79,36 +80,42 @@ payload = get_postdata()
 arg = [json.dumps(payload), get_sign(payload)]
 socket.emit('private', arg)
 
+instance_prices = Prices()
 
 @socket.on('message')
 def message(data):
-    print("New Message - %s" % data)
+    pass
+    # print("New Message - %s" % data)
 
 
 @socket.on('trade')
 def trade(data):
     print("New Trade - %s" % data)
+    processor.process_trade(data, instance_prices)
 
 
 @socket.on('ticker')
 def ticker(data):
-    print("New Ticker - %s" % data)
+    pass
+    # print("New Ticker - %s" % data)
 
 
 @socket.on('grouporder')
 def grouporder(data):
-    print("New GroupOrder - %s" % data)
+    pass
+    # print("New GroupOrder - %s" % data)
 
 
 @socket.on('order')
 def order(data):
-    print("New Order - %s" % data)
+    pass
+    # print("New Order - %s" % data)
 
 
 @socket.on('account_info')
 def account_info(data):
-    print("New Account_info - %s" % data)
-
+    pass
+    # print("New Account_info - %s" % data)
 
 while True:
     raw_input()
