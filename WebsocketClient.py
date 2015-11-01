@@ -9,7 +9,10 @@ import hmac
 import hashlib
 import base64
 
-from pip.backwardcompat import raw_input
+try:
+    from pip.util import get_installed_distributions
+except:
+    from pip.utils import get_installed_distributions
 import pysocketio_client as io
 
 access_key = "<YOUR ACCESS KEY>"
