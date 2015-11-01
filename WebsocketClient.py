@@ -97,7 +97,7 @@ def trade(data):
 @socket.on('ticker')
 def ticker(data):
     pass
-    # print("New Ticker - %s" % data)
+    # print("New Ticker - %s" % data) ;;
 
 
 @socket.on('grouporder')
