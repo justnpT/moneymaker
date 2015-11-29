@@ -1,4 +1,8 @@
-""" An example for Python Socket.io Client
+"""
+This file is responsible for gathering data to data structures.
+This file is not responsible for any processing
+
+An example for Python Socket.io Client
     Require installing socket.io client for Python first
     Refer to the source here to install socket.io client for Python: https://github.com/fuzeman/PySocketIO-Client
 """
@@ -8,8 +12,8 @@ import re
 import hmac
 import hashlib
 import base64
-import processor
-from prices import Prices
+from data_collection import collector
+from data_collection.prices import Prices
 try:
     from pip.util import get_installed_distributions
 except:
@@ -91,7 +95,7 @@ def message(data):
 @socket.on('trade')
 def trade(data):
     print("New Trade - %s" % data)
-    processor.process_trade(data, instance_prices)
+    collector.collect_trade(data, instance_prices)
 
 
 @socket.on('ticker')
