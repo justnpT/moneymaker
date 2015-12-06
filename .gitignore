@@ -4,6 +4,7 @@ results.xml
 test.py
 credentials.py
 ve
+raw_data
 
 # Standard Python stuff
 *.egg-info/

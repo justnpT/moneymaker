@@ -13,7 +13,6 @@ import hmac
 import hashlib
 import base64
 import collector
-from prices import Prices
 try:
     from pip.util import get_installed_distributions
 except:
@@ -84,8 +83,6 @@ payload = get_postdata()
 arg = [json.dumps(payload), get_sign(payload)]
 socket.emit('private', arg)
 
-instance_prices = Prices()
-
 @socket.on('message')
 def message(data):
     pass
@@ -95,7 +92,7 @@ def message(data):
 @socket.on('trade')
 def trade(data):
     print("New Trade - %s" % data)
-    collector.collect_trade(data, instance_prices)
+    collector.collect_trade(data)
 
 
 @socket.on('ticker')
