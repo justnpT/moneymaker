@@ -22,6 +22,10 @@ Windows:
 6. Lets check if it works. Type `python main_runner.py --group="sony_business_value"`. We are adding sony_business_value group so that you don't have to wait for all hundreds tests to finish.
 7. You should now start seeing small dots appearing. Each dot is a test, and when they all finish, you should see information: `Ran [int] tests in [float]s` it means you have installed everything properly.
 
+### Envirionment variables requirements
+
+1. workspace path must be added to sys.path so that you can import modules by specyfing the exact strategos path.
+
 ### Setting up api-tests on Jenkins
 
 Your Jenkins instance should:

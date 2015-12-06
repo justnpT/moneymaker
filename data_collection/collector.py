@@ -1,7 +1,6 @@
 import logging
 logging.basicConfig()
-import condition.buying_condition
-
+import strategos.condition
 
 def collect_trade(data, instance_prices):
     """

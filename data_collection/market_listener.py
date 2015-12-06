@@ -12,8 +12,8 @@ import re
 import hmac
 import hashlib
 import base64
-from data_collection import collector
-from data_collection.prices import Prices
+import collector
+from prices import Prices
 try:
     from pip.util import get_installed_distributions
 except:
