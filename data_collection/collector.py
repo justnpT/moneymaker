@@ -1,6 +1,5 @@
-import logging
 import datetime
-logging.basicConfig()
+import os
 
 def collect_trade(data):
     """
@@ -13,5 +12,8 @@ def collect_trade(data):
     market = data[u'market']
     year_month_day = datetime.datetime.fromtimestamp(int(unix_timestamp)).strftime('%Y-%m-%d')
 
-    file = open("../raw_data/"+year_month_day+"_"+market+"_trade", 'a')
+    raw_data_path = "../raw_data/"
+    if not os.path.exists(raw_data_path):
+        os.makedirs(raw_data_path)
+    file = open(raw_data_path+year_month_day+"_"+market+"_trade", 'a')
     file.write(str(data) + '\n')
