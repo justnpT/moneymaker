@@ -1,6 +1,4 @@
-import logging
 import datetime
-logging.basicConfig()
 
 def collect_trade(data):
     """
