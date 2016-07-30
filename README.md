@@ -1,7 +1,7 @@
 strategos
 =========
 
-Python 2.7xy
+Python 2.7xy <- scientific python distribution 
 
 ### Installing dependencies
 
