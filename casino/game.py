@@ -66,7 +66,7 @@ a = numpy.mean(profit_3_3)
 b = numpy.mean(profit_3_2)
 c = numpy.mean(profit_3_1)
 
-#TODO: sprawdz czemu dla analogicznych strategii są różne wyniki np 12/1: 10, 3/15: 20/17, 15:20
+#TODO: sprawdz czemu dla analogicznych strategii sa rozne wyniki, np 12/1: 10, 3/15: 20/17, 15:20
 
 print("profit_3_3 mean:" +str(a))
 print("profit_3_2 mean:" +str(b))
