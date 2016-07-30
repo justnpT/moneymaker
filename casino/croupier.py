@@ -24,7 +24,7 @@ class croupier():
         '''
         pass
 
-    def welcome_player(self, player):
+    def add_player(self, player):
         self.players.append(player)
 
     def verify_match(self, bet_type, roulette, player):
@@ -48,7 +48,7 @@ class croupier():
     def pay(self, player, payment):
         player.set_payment(payment)
 
-    def verify_matches(self, roulette, player):
+    def pay_for_matches(self, roulette, player):
         '''
         Check if player the result is winning any of the player bets
         :param result:

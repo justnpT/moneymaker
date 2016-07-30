@@ -1,4 +1,8 @@
-e__author__ = 'wikia'
+from casino.reports.report_generator import report_generator
+
+"""
+Elementy gry: gracze, strategia gracza, krupier, ruletka
+"""
 
 from play.player import player
 from play.strategy import strategy
@@ -39,9 +43,10 @@ for result_trio in roll_combinations:
         print "here"
     for result in result_trio:
         before = player_michal.get_account()
-        croupier.welcome_player(player_michal)
-        roulette.set_result(result) # krupier zmienia stan ruletki i poznaje rezultat
-        croupier.verify_matches(roulette, player_michal) # krupier decyduje na podstawie rezultaty wyplaca graczom kwoty
+        croupier.add_player(player_michal)
+        roulette.set_result(result) # ustawienie rezultatu stan ruletki i poznaje rezultat
+
+        croupier.pay_for_matches(roulette, player_michal) # na podstawie rezultatu krupier wyplaca graczom kwoty
 
         if player_michal.get_account() > 0:
             print(player_michal.get_account())
@@ -66,7 +71,7 @@ a = numpy.mean(profit_3_3)
 b = numpy.mean(profit_3_2)
 c = numpy.mean(profit_3_1)
 
-#TODO: sprawdz czemu dla analogicznych strategii sa rozne wyniki, np 12/1: 10, 3/15: 20/17, 15:20
+#TODO: czemu dla analogicznych strategii sa rozne wyniki np 12/1: 10, 3/15: 20/17, 15:20
 
 print("profit_3_3 mean:" +str(a))
 print("profit_3_2 mean:" +str(b))
