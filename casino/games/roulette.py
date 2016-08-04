@@ -38,8 +38,9 @@ class roulette():
             if self.result in number_colours[key]:
                 return key
 
-    def get_multiplier(self, key):
-        multiplier = {'number': 10, 'colour': 2}
+    @staticmethod
+    def get_multiplier(key):
+        multiplier = {'number': 35, 'colour': 2}
 
         return multiplier[key]
 
