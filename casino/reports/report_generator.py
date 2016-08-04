@@ -1,26 +1,50 @@
-from PollyReports import Report, Band, Element
-from reportlab.pdfgen.canvas import Canvas
+from casino.games.roulette import roulette
 
 class report_generator():
 
-    def __init__(self):
-        self.rolls = dict()
-        {"result": [], "multiplier": [], "profit": [], "player account":[]}
+    loggingEnabled = True;
 
-    def log_roll(self, roll_number):
-        self.rolls[roll_number] = dict()
+    @staticmethod
+    def log_game(roll_number):
+        if report_generator.loggingEnabled == True:
+            print("game: "+ str(roll_number))
 
-    def log_result(self, roll_number, result):
-        self.rolls[roll_number]["result"] = result
+    @staticmethod
+    def log_result(result):
+        if report_generator.loggingEnabled == True:
+            print("result: "+str(result))
 
-    def log_multiplier(self, roll_number, multiplier):
-        self.rolls[roll_number]["multiplier"] = multiplier
+    @staticmethod
+    def log_player_bet(player_bet):
+        if report_generator.loggingEnabled == True:
+            for bet_type, bet_dict in player_bet.iteritems():
+                print("bet type: "+bet_type),
+                for bet_target, bet_amount in bet_dict.iteritems():
+                    if type(bet_target) == str:
+                        print(bet_target+": "+str(bet_amount)),
+                    elif type(bet_target) == int:
+                        print(str(bet_target)+ ": "+str(bet_amount)),
+                print("")
+                print("bet multiplier: " + str(roulette.get_multiplier(bet_type)))
 
-    def log_profit(self, roll_number, profit):
-        self.rolls[roll_number]["profit"] = profit
+    @staticmethod
+    def log_player_account(player_account):
+        print("player account: "+str(player_account))
 
-    def log_player_account(self, roll_number, player_account):
-        self.rolls[roll_number]["player_account"] = player_account
+    @staticmethod
+    def log_player_account_history(player_account_history):
+        print("player account history: "),
+        for account in player_account_history:
+            print(str(account)+", "),
+        print("")
+
+    def log_multiplier(multiplier):
+        print("multiplier: "+multiplier)
+
+    def log_profit(profit):
+        print("profit: "+profit)
+
+
 
     def printReport(self):
         for key, value in self.rolls.iteritems():
